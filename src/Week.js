@@ -5,20 +5,33 @@ const Week = () => {
 
     const [weather, setWeather] = useState('')
 
-    const key = 'bc8ec85a05e14a85876183250202411'
-    const baseUrl = 'http://api.weatherapi.com/v1'
-
+    
+    // const baseUrl = 'https://api.openweathermap.org/data/2.5'
+//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
     useEffect(() => {
-        fetch(`${baseUrl}/forecast.json?key=${key}&q=Moscow&days=7`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=55.753960&lon=37.620393&exclude=minutely,hourly&units=metric&appid=46ff5a3df8a8bb470a1eba7f5d0ceed7`)
             .then(data => data.json())
-            .then(data => setWeather(data.forecast.forecastday))
+            .then(data => setWeather(data.daily))
     }, [])
 
+    const getTime = (unixTime) => {
+        const d = new Date(unixTime*1000)
+        return d.toLocaleDateString()
+    }   
+
     return (
+    
+
         <div className="forecast">
-            <h1>Погода на неделю</h1>
+            <h2>Погода на неделю</h2>
             <div className='week'>
-                {weather.length > 0 && weather.map(d => <div className='item'> <img src={d.day.condition.icon} />  <p>Температура: {d.day.avgtemp_c}</p><p> Влажность: {d.day.avghumidity}</p></div>)}
+                {weather.length > 0 && weather.map(d => <div className='item'> 
+                <img src={`http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} />  
+                <p>Дата: {getTime(d.dt)}</p>
+                <p>Температура: {Math.floor(d.temp.day)} ℃ </p>
+                <p> Ощущается как: {Math.floor(d.feels_like.day)} ℃ </p>
+                <p> Влажность: {d.humidity} % </p>
+                </div>)}
             </div>
         </div>
     )

@@ -2,10 +2,19 @@ body {
   background-color: #f7bacf;
   margin: 0;
   height: 100vh;
-  font-family: sans-serif;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+h1 {
+  font-size: 50px;
 }
 .container {
   padding: 50px;
+  
+}
+h2 {
+  font-size: 35px;
 }
 
 a {
@@ -21,11 +30,11 @@ a {
   padding: 50px;
   display: flex;
 }
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none; 
-  font-family: sans-serif;
   font-size: 30px;
   display: flex;
 }
@@ -40,20 +49,66 @@ ul {
 }
 
 .content {
-  background-color: #c3fdff;
+  padding: 40px;
+  background-color:#5d99c6;
+  border-radius: 0 0 30px 30px;
 }
 
 .week {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 28px;
 }
 
 .forecast {
   padding: 16px;
 }
+
 .item {
+  border-radius: 30px;
   min-width: 180px;
+  max-width: 300px;
+  background-color: #f7bacf;
+  box-shadow:  7px 7px 14px #49779a;
+  padding-bottom: 28px;
 }
 
-.item + .item {
-  margin-left: 8px;
+.item p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 40px;
 }
+
+@media (max-width: 1110px) {
+  .week {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 885px) {
+  .week {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 670px) {
+  .week {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 490px) {
+  .header {
+    flex-direction: column;
+  }
+  .container {
+    padding: 8px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+
