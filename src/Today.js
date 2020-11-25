@@ -43,33 +43,43 @@ const Today = () => {
                 <div className="item todayMain">
                     <img src={weather.icon} alt="weather_icon"/>
                     <h3>Сейчас</h3>
-                    <p>Температура: {weather.tempMorn} ℃ </p>
-                    <p>Ощущается как: {weather.feelslikeMorn} ℃ </p>
-                    <p>Влажность: {weather.humidity} % </p>
+                    <div className="info">
+                    <p className="title">Температура: </p><p>{weather.tempMorn} ℃ </p>
+                    <p className="title">Ощущается как: </p><p>{weather.feelslikeMorn} ℃ </p>
+                    <p className="title">Влажность: </p><p>{weather.humidity} % </p>
+                    </div>
                 </div>
                 <div className="item mini">
                     <h3>Сегодня утром</h3>
-                    <p>Температура: {weather.tempMorn} ℃ </p>
-                    <p>Ощущается как: {weather.feelslikeMorn} ℃ </p>
-                    <p>Влажность: {weather.humidity} % </p>
+                    <div className="info">
+                    <p className="title">Температура: </p><p>{weather.tempMorn} ℃ </p>
+                    <p className="title">Ощущается как: </p><p>{weather.feelslikeMorn} ℃ </p>
+                    <p className="title">Влажность: </p><p>{weather.humidity} % </p>
+                    </div>
                 </div>
                 <div className="item mini">
                     <h3>Сегодня днем</h3>
-                    <p>Температура: {weather.tempDay} ℃ </p>
-                    <p>Ощущается как: {weather.feelslikeDay} ℃ </p>
-                    <p>Влажность: {weather.humidity} % </p>
+                    <div className="info">
+                    <p className="title">Температура: </p><p>{weather.tempDay} ℃ </p>
+                    <p className="title">Ощущается как: </p><p>{weather.feelslikeDay} ℃ </p>
+                    <p className="title">Влажность: </p><p>{weather.humidity} % </p>
+                    </div>
                 </div>
                 <div className="item mini">
                     <h3>Сегодня вечером</h3>
-                    <p>Температура: {weather.tempEve} ℃ </p>
-                    <p>Ощущается как: {weather.feelslikeEve} ℃ </p>
-                    <p>Влажность: {weather.humidity} % </p>
+                    <div className="info">
+                    <p className="title">Температура: </p><p>{weather.tempEve} ℃ </p>
+                    <p className="title">Ощущается как: </p><p>{weather.feelslikeEve} ℃ </p>
+                    <p className="title">Влажность: </p><p>{weather.humidity} % </p>
+                    </div>
                 </div>
                 <div className="item mini">
                     <h3>Сегодня ночью</h3>
-                    <p>Температура: {weather.tempNight} ℃ </p>
-                    <p>Ощущается как: {weather.feelslikeNight} ℃ </p>
-                    <p>Влажность: {weather.humidity} % </p>
+                    <div className="info">
+                    <p className="title">Температура: </p><p>{weather.tempNight} ℃ </p>
+                    <p className="title">Ощущается как: </p><p>{weather.feelslikeNight} ℃ </p>
+                    <p className="title">Влажность: </p><p>{weather.humidity} % </p>
+                    </div>
                 </div>
             </div>
         </div>

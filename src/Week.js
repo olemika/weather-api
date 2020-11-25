@@ -26,9 +26,11 @@ const Week = () => {
                 {weather.length > 0 && weather.map(d => <div className='item'> 
                 <img src={`http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} alt="weather_icon"/>  
                 <h3>Дата: {getTime(d.dt)}</h3>
-                <p>Температура: {Math.floor(d.temp.day)} ℃ </p>
-                <p> Ощущается как: {Math.floor(d.feels_like.day)} ℃ </p>
-                <p> Влажность: {d.humidity} % </p>
+                <div className="info">
+                <p className="title">Температура: </p><p>{Math.floor(d.temp.day)} ℃ </p>
+                <p className="title"> Ощущается как: </p><p>{Math.floor(d.feels_like.day)} ℃ </p>
+                <p className="title"> Влажность: </p><p>{d.humidity} % </p>
+                </div>
                 </div>)}
             </div>
         </div>
