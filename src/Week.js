@@ -24,7 +24,7 @@ const Week = () => {
             <h2>Погода в Москве на неделю</h2>
             <div className='week'>
                 {weather.length > 0 && weather.map(d => <div className='item'> 
-                <img src={`http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} />  
+                <img src={`http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`} alt="weather_icon"/>  
                 <h3>Дата: {getTime(d.dt)}</h3>
                 <p>Температура: {Math.floor(d.temp.day)} ℃ </p>
                 <p> Ощущается как: {Math.floor(d.feels_like.day)} ℃ </p>

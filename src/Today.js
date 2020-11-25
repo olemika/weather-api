@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import { getCurrentWeather } from './servicies/weaterApi'
 
 const Today = () => {
     const [weather, setWeather] = useState('')
 
-    const key = '46ff5a3df8a8bb470a1eba7f5d0ceed7'
     const baseUrl = 'https://api.openweathermap.org/data/2.5'
 
 
@@ -43,7 +41,7 @@ const Today = () => {
             <h2>Погода в Москве сегодня</h2>
             <div className="todayList">
                 <div className="item todayMain">
-                    <img src={weather.icon} />
+                    <img src={weather.icon} alt="weather_icon"/>
                     <h3>Сейчас</h3>
                     <p>Температура: {weather.tempMorn} ℃ </p>
                     <p>Ощущается как: {weather.feelslikeMorn} ℃ </p>
